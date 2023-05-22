@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <h1>Tabuada</h1>
+      <div id="botoes">
+        <button class="botao" id="calc" onclick="calcular()">calcular</button>
+        <button class="botao" id="clear" onclick="limpar()">limpar</button>
+      </div>
+      <div id="resultado"></div>
+    </main>
+    <script>
+      const result = document.getElementById("resultado");
+      function calcular() {
+        let resultado = "";
+        let numero1 = parseFloat(prompt("Escolha um numero"));
+        let numero2 = parseFloat(
+          prompt("Escolha ate que numero quer a tabuada")
+        );
+        for (c = 0; c <= numero2; c++) {
+          resultado += `${numero1} x ${c} = ${numero1 * c}<br> `;
+        }
+        result.innerHTML = resultado;
+      }
+      function limpar() {
+        result.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
